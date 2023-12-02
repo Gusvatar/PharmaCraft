@@ -6,6 +6,7 @@ TagManager:
   tags:
   - furniture
   - balcao
+  - ItemPegavel
   layers:
   - Default
   - TransparentFX
