@@ -17,6 +17,10 @@ public class TimeQueueManager : MonoBehaviour
 
     private void AdicionarCliente()
     {
+        if(gerenciadorFilaClientes.queueSize() >= 5){
+            return;
+        }
+            
         GameObject novoCliente = Instantiate(clientePrefab, clientePrefab.transform.position, Quaternion.identity);
         gerenciadorFilaClientes.AdicionarCliente(novoCliente);
     }

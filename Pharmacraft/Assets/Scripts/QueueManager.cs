@@ -14,25 +14,58 @@ public class QueueManager : MonoBehaviour{
     public GameObject balcao;
     public GameObject balcaoPrioridade;
     private bool clientePrioridadeEmFila = false;
+    public float tempoParaSerAtendido = 60.0f;
 
 
+    void Update()
+    {
+
+        if(queueSize() >= 0){
+            if(tempoParaSerAtendido == 30){
+                top().GetComponent<Cliente>().showWarning();
+            }
+
+            if(tempoParaSerAtendido == 15){
+                top().GetComponent<Cliente>().showDesapointment();
+            }
+        }
+        
+
+        tempoParaSerAtendido -= Time.deltaTime;
+        Debug.Log(tempoParaSerAtendido);
+        if (tempoParaSerAtendido <= 0)
+        {
+            Debug.Log("Cliente saiu da fila por ter excedido o tempo.");
+            RemoverCliente();
+        }
+        
+    }
     public int queueSize(){
         return filaDeClientes.Count;
     }
 
+    public GameObject top(){
+        GameObject[] filaArray = filaDeClientes.ToArray();
+        return filaArray[0];
+    }
+
+
 
     public void AdicionarCliente(GameObject novoCliente) {
-        if (filaDeClientes.Count >= maxQueue)
+        if (filaDeClientes.Count >= maxQueue){
+            Destroy(novoCliente);
             return;
+        }
+            
             
         Sprite randomSprite;
 
-        int rand = Random.Range(0, clientSprites.Length+1);
-        if(rand < clientSprites.Length || clientePrioridadeEmFila){
-            randomSprite = clientSprites[rand];
-        } else{
+        int rand = Random.Range(0, 3);
+        if(rand == 3 && !clientePrioridadeEmFila){
             clientePrioridadeEmFila = true;
             randomSprite = prioritySprite;
+        } else{
+            randomSprite = clientSprites[rand];
         }
         novoCliente.GetComponent<SpriteRenderer>().sprite = randomSprite;
 
@@ -72,6 +105,7 @@ public class QueueManager : MonoBehaviour{
         
         if (filaDeClientes.Count > 0)
         {
+            tempoParaSerAtendido = 65.0f;
             GameObject clienteRemovido = filaDeClientes.Dequeue();
             clienteRemovido.GetComponent<Cliente>().atendido = true;
             StartCoroutine(AnimacaoRemocaoCliente(clienteRemovido));
@@ -94,8 +128,7 @@ public class QueueManager : MonoBehaviour{
     private IEnumerator AnimacaoRemocaoCliente(GameObject cliente) {
         float duracaoAnimacaoX = 1.0f; // Duração da animação lateral 
         float duracaoAnimacaoY = 5.0f; // Duração da animação horizontal
-        float distanciaMovimentoLateral = -1.0f; // Distância que o cliente se moverá lateralmente
-
+        float distanciaMovimentoLateral = cliente.GetComponent<SpriteRenderer>().sprite == prioritySprite?-1:1; // Distância que o cliente se moverá lateralmente
 
         Vector3 posicaoInicial = cliente.transform.position;
         Vector3 posicaoFinal = posicaoInicial + new Vector3(distanciaMovimentoLateral, 0, 0);
