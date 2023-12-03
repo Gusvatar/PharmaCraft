@@ -484,7 +484,7 @@ GameObject:
   - component: {fileID: 486020342}
   - component: {fileID: 486020341}
   - component: {fileID: 486020344}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: exemploItem
   m_TagString: ItemPegavel
   m_Icon: {fileID: 0}
@@ -552,7 +552,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: -822469464, guid: 9cb1747a40e6c9c46a8bc9ae769dacf2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -716,7 +716,7 @@ GameObject:
   - component: {fileID: 909599387}
   - component: {fileID: 909599391}
   - component: {fileID: 909599390}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Furniture
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2988,7 +2988,7 @@ GameObject:
   - component: {fileID: 937515170}
   - component: {fileID: 937515172}
   - component: {fileID: 937515174}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -3374,7 +3374,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1587958089}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GrabDetect
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -9122,7 +9122,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1887629056}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ObjHolder
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
