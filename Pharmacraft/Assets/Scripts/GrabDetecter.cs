@@ -16,7 +16,7 @@ public class GrabDetecter : MonoBehaviour
 
        if(grabCheck.collider != null && grabCheck.collider.tag == "ItemPegavel")
        {
-            if(Input.GetKey(KeyCode.G))
+            if(Input.GetKey(KeyCode.Space))
             {
                grabCheck.collider.gameObject.transform.parent = ObjHolder;
                grabCheck.collider.gameObject.transform.position = ObjHolder.position;
