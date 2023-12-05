@@ -32,7 +32,7 @@ public class QueueManager : MonoBehaviour{
         
 
         tempoParaSerAtendido -= Time.deltaTime;
-        Debug.Log(tempoParaSerAtendido);
+        // Debug.Log(tempoParaSerAtendido);
         if (tempoParaSerAtendido <= 0)
         {
             Debug.Log("Cliente saiu da fila por ter excedido o tempo.");
@@ -60,11 +60,15 @@ public class QueueManager : MonoBehaviour{
             
         Sprite randomSprite;
 
-        int rand = Random.Range(0, 3);
+        int rand = Random.Range(0, 4);
+        Debug.Log(rand);
         if(rand == 3 && !clientePrioridadeEmFila){
             clientePrioridadeEmFila = true;
             randomSprite = prioritySprite;
-        } else{
+        } else {
+            if(rand <= 3){
+                rand = 2;
+            }
             randomSprite = clientSprites[rand];
         }
         novoCliente.GetComponent<SpriteRenderer>().sprite = randomSprite;

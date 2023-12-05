@@ -4,10 +4,7 @@ using UnityEngine;
 
 public class balcao : MonoBehaviour
 {
-    public GameObject modalEntrega;
     public QueueManager fila;
-    
-
     private bool playerNearby = false;
 
     void OnTriggerEnter2D(Collider2D other)
@@ -15,7 +12,6 @@ public class balcao : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerNearby = true;
-            modalEntrega.SetActive(true);
         }
     }
 
@@ -23,8 +19,7 @@ public class balcao : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("O jogador saiu da área do balcão!");
-            // Faça o que for necessário aqui quando o jogador sair do balcão
+            playerNearby = false;
         }
     }
 
