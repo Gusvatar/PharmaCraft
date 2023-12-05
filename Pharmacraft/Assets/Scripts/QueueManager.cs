@@ -20,19 +20,21 @@ public class QueueManager : MonoBehaviour{
     void Update()
     {
 
-        if(queueSize() >= 0){
-            if(tempoParaSerAtendido == 30){
-                top().GetComponent<Cliente>().showWarning();
-            }
+        if(queueSize() > 0){
 
-            if(tempoParaSerAtendido == 15){
-                top().GetComponent<Cliente>().showDesapointment();
+            if(tempoParaSerAtendido <= 30 && tempoParaSerAtendido >= 25){
+                top().GetComponent<Cliente>().showMediumBalloon();
+            }else if(tempoParaSerAtendido <= 15 && tempoParaSerAtendido >= 10){
+                top().GetComponent<Cliente>().showAngryTimeBalloon();
+            }else if(tempoParaSerAtendido <= 25){
+                top().GetComponent<Cliente>().removeMediumBalloon();
+                top().GetComponent<Cliente>().removeAngryTimeBalloon();
             }
         }
         
 
         tempoParaSerAtendido -= Time.deltaTime;
-        // Debug.Log(tempoParaSerAtendido);
+        Debug.Log(tempoParaSerAtendido);
         if (tempoParaSerAtendido <= 0)
         {
             Debug.Log("Cliente saiu da fila por ter excedido o tempo.");
@@ -130,6 +132,8 @@ public class QueueManager : MonoBehaviour{
         }
     }
     private IEnumerator AnimacaoRemocaoCliente(GameObject cliente) {
+        cliente.GetComponent<Cliente>().showAngryTimeBalloon();
+
         float duracaoAnimacaoX = 1.0f; // Duração da animação lateral 
         float duracaoAnimacaoY = 5.0f; // Duração da animação horizontal
         float distanciaMovimentoLateral = cliente.GetComponent<SpriteRenderer>().sprite == prioritySprite?-1:1; // Distância que o cliente se moverá lateralmente
@@ -148,6 +152,8 @@ public class QueueManager : MonoBehaviour{
 
         // Aguarde um curto período para exibir o cliente na nova posição
         yield return new WaitForSeconds(0.5f);
+        cliente.GetComponent<Cliente>().removeAngryTimeBalloon();
+        cliente.GetComponent<Cliente>().showAngryBalloon();
 
         // Inverta a direção da animação (volte para a posição inicial)
         posicaoInicial = cliente.transform.position;

@@ -10,8 +10,19 @@ public class Cliente : MonoBehaviour
     public float distânciaParadaY = 1f;
     public bool prioridade = false;
 
-    public GameObject balaoInsatisfacao;
-    public GameObject balaoRaiva;
+    private GameObject angryBalloon;
+    private GameObject angryTimeBalloon;
+    private GameObject mediumBalloon;
+    private GameObject moneyBalloon;
+
+
+    private void Start()
+    {
+        angryBalloon = transform.GetChild(0).gameObject;
+        angryTimeBalloon = transform.GetChild(1).gameObject;
+        mediumBalloon = transform.GetChild(2).gameObject;
+        moneyBalloon = transform.GetChild(3).gameObject;
+    }
 
     private void Update()
     {
@@ -35,19 +46,15 @@ public class Cliente : MonoBehaviour
         transform.Translate(direção * velocidade * Time.deltaTime);
     }
 
-    public void showWarning(){
-        balaoInsatisfacao.SetActive(true);
-    }
+    public void showAngryBalloon(){  angryBalloon.SetActive(true); }
+    public void removeAngryBalloon(){ angryBalloon.SetActive(false); }
 
-    public void removeWarning(){
-        balaoInsatisfacao.SetActive(false);
-    }
+    public void showAngryTimeBalloon(){  angryTimeBalloon.SetActive(true); }
+    public void removeAngryTimeBalloon(){ angryTimeBalloon.SetActive(false); }
 
-    public void showDesapointment(){
-        balaoRaiva.SetActive(true);
-    }
+    public void showMediumBalloon(){  mediumBalloon.SetActive(true); }
+    public void removeMediumBalloon(){ mediumBalloon.SetActive(false); }
 
-    public void removeDesapointment(){
-        balaoRaiva.SetActive(false);
-    }
+    public void showMoneyBalloon(){  moneyBalloon.SetActive(true); }
+    public void removeMoneyBalloon(){ moneyBalloon.SetActive(false); }
 }
