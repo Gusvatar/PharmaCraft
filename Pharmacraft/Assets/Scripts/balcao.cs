@@ -34,6 +34,7 @@ public class balcao : MonoBehaviour
     void EntregarRemédio()
     {
         if(fila.queueSize() > 0){
+            fila.top().GetComponent<Cliente>().sucesso = true;
             fila.RemoverCliente();
         }
     }

@@ -34,7 +34,7 @@ public class QueueManager : MonoBehaviour{
         
 
         tempoParaSerAtendido -= Time.deltaTime;
-        Debug.Log(tempoParaSerAtendido);
+        //Debug.Log(tempoParaSerAtendido);
         if (tempoParaSerAtendido <= 0)
         {
             Debug.Log("Cliente saiu da fila por ter excedido o tempo.");
@@ -63,7 +63,7 @@ public class QueueManager : MonoBehaviour{
         Sprite randomSprite;
 
         int rand = Random.Range(0, 4);
-        Debug.Log(rand);
+        //Debug.Log(rand);
         if(rand == 3 && !clientePrioridadeEmFila){
             clientePrioridadeEmFila = true;
             randomSprite = prioritySprite;
@@ -115,7 +115,7 @@ public class QueueManager : MonoBehaviour{
             GameObject clienteRemovido = filaDeClientes.Dequeue();
             clienteRemovido.GetComponent<Cliente>().atendido = true;
             StartCoroutine(AnimacaoRemocaoCliente(clienteRemovido));
-            AtualizarFila();
+            if (filaDeClientes.Count > 0) AtualizarFila();
         }
     }
 
@@ -132,8 +132,8 @@ public class QueueManager : MonoBehaviour{
         }
     }
     private IEnumerator AnimacaoRemocaoCliente(GameObject cliente) {
-        cliente.GetComponent<Cliente>().showAngryTimeBalloon();
 
+        if(!cliente.GetComponent<Cliente>().sucesso) {cliente.GetComponent<Cliente>().showAngryTimeBalloon();}
         float duracaoAnimacaoX = 1.0f; // Duração da animação lateral 
         float duracaoAnimacaoY = 5.0f; // Duração da animação horizontal
         float distanciaMovimentoLateral = cliente.GetComponent<SpriteRenderer>().sprite == prioritySprite?-1:1; // Distância que o cliente se moverá lateralmente
@@ -152,8 +152,11 @@ public class QueueManager : MonoBehaviour{
 
         // Aguarde um curto período para exibir o cliente na nova posição
         yield return new WaitForSeconds(0.5f);
-        cliente.GetComponent<Cliente>().removeAngryTimeBalloon();
-        cliente.GetComponent<Cliente>().showAngryBalloon();
+        if(!cliente.GetComponent<Cliente>().sucesso){
+            cliente.GetComponent<Cliente>().removeAngryTimeBalloon();
+            cliente.GetComponent<Cliente>().showAngryBalloon();
+        } 
+
 
         // Inverta a direção da animação (volte para a posição inicial)
         posicaoInicial = cliente.transform.position;

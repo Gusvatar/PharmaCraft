@@ -6,6 +6,7 @@ public class Cliente : MonoBehaviour
 {
     public GameObject alvoPosicao;
     public bool atendido = false;
+    public bool sucesso = false;
     public float velocidade = 2.0f;
     public float distânciaParadaY = 1f;
     public bool prioridade = false;
