@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9c84cc374e1331141b6621c5db34e8f5
+guid: 68b63a4e20791444fa3c74ad3b486127
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -103,91 +103,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: mediumBalloon
-      rect:
-        serializedVersion: 2
-        x: 49
-        y: 71
-        width: 15
-        height: 17
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c1e14b04113c23644ad9d6b5c8c8eee4
-      internalID: -721398955
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: angryBalloon
-      rect:
-        serializedVersion: 2
-        x: 178
-        y: 144
-        width: 13
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0ac83875054bb5f4d87343d6b1ca0682
-      internalID: 1967832194
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: angryTimeBalloon
-      rect:
-        serializedVersion: 2
-        x: 98
-        y: 71
-        width: 13
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 945209a8cc9801c41b5b4a8aac74d274
-      internalID: -108548530
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: moneyBalloon
-      rect:
-        serializedVersion: 2
-        x: 114
-        y: 199
-        width: 11
-        height: 17
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9f393b0730f0d184b90e8dc798d0cd87
-      internalID: 2110234872
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
@@ -198,11 +114,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      angryTimeBalloon: -108548530
-      mediumBalloon: -721398955
-      angryBalloon: 1967832194
-      moneyBalloon: 2110234872
+    nameFileIdTable: {}
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

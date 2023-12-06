@@ -62,27 +62,6 @@ public class QueueManager : MonoBehaviour{
     }
 
 
-    public string[] criaReceita(){
-        string[] receita = new string[3];
-
-        for(int i = 0; i < 3; i++){
-            int rand = Random.Range(0, 3);
-            if(rand == 0){  
-                receita[i] = "azul";
-            }
-
-            if(rand == 1){
-                receita[i] = "vermelho";
-            }
-
-            if(rand == 2){
-                receita[i] = "verde";
-            }
-        }
-
-        return receita;
-    }
-
     public void AdicionarCliente(GameObject novoCliente) {
         if (filaDeClientes.Count >= maxQueue){
             Destroy(novoCliente);
@@ -91,8 +70,6 @@ public class QueueManager : MonoBehaviour{
         bool isPriority = false;
 
 
-
-        novoCliente.GetComponent<Cliente>().receita = criaReceita();
         Debug.Log(novoCliente.GetComponent<Cliente>().receita[0] + " - " + novoCliente.GetComponent<Cliente>().receita[1] + " - " + novoCliente.GetComponent<Cliente>().receita[2]);
             
         Sprite randomSprite;

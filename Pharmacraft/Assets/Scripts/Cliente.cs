@@ -11,7 +11,7 @@ public class Cliente : MonoBehaviour
     public float distânciaParadaY = 1f;
     public bool prioridade = false;
 
-    public string[] receita = new string[3];
+    public int[] receita = new int[3];
 
 
 
@@ -21,13 +21,58 @@ public class Cliente : MonoBehaviour
     private GameObject moneyBalloon;
 
 
+
+    public Sprite[] recepySprites;
+    private GameObject recepy1;
+    private GameObject recepy2;
+    private GameObject recepy3;
+
+
     private void Start()
     {
         angryBalloon = transform.GetChild(0).gameObject;
         angryTimeBalloon = transform.GetChild(1).gameObject;
         mediumBalloon = transform.GetChild(2).gameObject;
         moneyBalloon = transform.GetChild(3).gameObject;
+
+        recepy1 = transform.GetChild(4).gameObject;
+        recepy2 = transform.GetChild(5).gameObject;
+        recepy3 = transform.GetChild(6).gameObject;
+
+        receita = criaReceita();
+        loadRecepySprits();
     }
+
+    public int[] criaReceita(){
+        int[] receita = new int[3];
+
+        for(int i = 0; i < 3; i++){
+            int rand = Random.Range(0, 3);
+            receita[i] = rand;
+        }
+
+        return receita;
+    }
+
+
+    public void showRecepy(){
+        recepy1.SetActive(true);
+        recepy2.SetActive(true);
+        recepy3.SetActive(true);
+    }
+
+    public void closeRecepy(){
+        recepy1.SetActive(false);
+        recepy2.SetActive(false);
+        recepy3.SetActive(false);
+    }
+
+    public void loadRecepySprits(){
+        recepy1.GetComponent<SpriteRenderer>().sprite = recepySprites[receita[0]];
+        recepy2.GetComponent<SpriteRenderer>().sprite = recepySprites[receita[1]];
+        recepy3.GetComponent<SpriteRenderer>().sprite = recepySprites[receita[2]];
+    }
+
 
     private void Update()
     {
@@ -40,9 +85,11 @@ public class Cliente : MonoBehaviour
         if (direção.magnitude <= distânciaParadaY)
         {
             velocidade = 0;
+            showRecepy();
             return;
         }else if (!atendido){
             velocidade = 2.0f;
+
         }
 
         direção.Normalize();
