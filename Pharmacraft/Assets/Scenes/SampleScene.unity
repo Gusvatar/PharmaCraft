@@ -814,6 +814,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteBranco: {fileID: 271080559, guid: dc18d9f154083964aa305a2451f71f6b, type: 3}
   spriteOriginal: {fileID: 1954588022, guid: c88bccc4c59326b46887692d3977ea27, type: 3}
+  player: {fileID: 937515174}
 --- !u!58 &239050953
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1325,6 +1326,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteBranco: {fileID: -1148370797, guid: dc18d9f154083964aa305a2451f71f6b, type: 3}
   spriteOriginal: {fileID: 1774421452, guid: dc18d9f154083964aa305a2451f71f6b, type: 3}
+  player: {fileID: 937515174}
 --- !u!1 &760214383
 GameObject:
   m_ObjectHideFlags: 0
@@ -4283,6 +4285,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteBranco: {fileID: -1099648785, guid: dc18d9f154083964aa305a2451f71f6b, type: 3}
   spriteOriginal: {fileID: -1840461711, guid: dc18d9f154083964aa305a2451f71f6b, type: 3}
+  player: {fileID: 937515174}
 --- !u!58 &1081636315
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -10466,6 +10469,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteBranco: {fileID: 1032401376, guid: dc18d9f154083964aa305a2451f71f6b, type: 3}
   spriteOriginal: {fileID: -1221880578, guid: dc18d9f154083964aa305a2451f71f6b, type: 3}
+  player: {fileID: 937515174}
 --- !u!58 &1798671916
 CircleCollider2D:
   m_ObjectHideFlags: 0
