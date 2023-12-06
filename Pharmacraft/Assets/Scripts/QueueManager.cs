@@ -16,11 +16,12 @@ public class QueueManager : MonoBehaviour{
     private bool clientePrioridadeEmFila = false;
     public float tempoParaSerAtendido = 60.0f;
 
+    public int money = 0;
 
     void Update()
     {
-
-        if(queueSize() > 0){
+        bool atendido = top().GetComponent<Cliente>().atendido;
+        if(queueSize() > 0 && !atendido){
 
             if(tempoParaSerAtendido <= 30 && tempoParaSerAtendido >= 25){
                 top().GetComponent<Cliente>().showMediumBalloon();
@@ -46,8 +47,17 @@ public class QueueManager : MonoBehaviour{
         return filaDeClientes.Count;
     }
 
+     public int priorityQueueSize(){
+        return filaDePrioridade.Count;
+    }
+
     public GameObject top(){
         GameObject[] filaArray = filaDeClientes.ToArray();
+        return filaArray[0];
+    }
+
+    public GameObject priorityTop(){
+        GameObject[] filaArray = filaDePrioridade.ToArray();
         return filaArray[0];
     }
 
@@ -152,9 +162,25 @@ public class QueueManager : MonoBehaviour{
             AtualizarFila();
         }
     }
-    private IEnumerator AnimacaoRemocaoCliente(GameObject cliente) {
 
-        if(!cliente.GetComponent<Cliente>().sucesso) {cliente.GetComponent<Cliente>().showAngryTimeBalloon();}
+
+    public void resetBallons(GameObject cliente){
+
+        cliente.GetComponent<Cliente>().removeAngryBalloon();
+        cliente.GetComponent<Cliente>().removeAngryTimeBalloon();
+        cliente.GetComponent<Cliente>().removeMediumBalloon();
+        cliente.GetComponent<Cliente>().removeMoneyBalloon();
+    }
+
+    private IEnumerator AnimacaoRemocaoCliente(GameObject cliente) {
+        resetBallons(cliente);
+
+
+        if(!cliente.GetComponent<Cliente>().sucesso) {
+            cliente.GetComponent<Cliente>().showAngryTimeBalloon();
+        } else{
+            cliente.GetComponent<Cliente>().showMoneyBalloon();
+        }
         float duracaoAnimacaoX = 1.0f; // Duração da animação lateral 
         float duracaoAnimacaoY = 5.0f; // Duração da animação horizontal
         float distanciaMovimentoLateral = cliente.GetComponent<SpriteRenderer>().sprite == prioritySprite?-1:1; // Distância que o cliente se moverá lateralmente
@@ -173,8 +199,8 @@ public class QueueManager : MonoBehaviour{
 
         // Aguarde um curto período para exibir o cliente na nova posição
         yield return new WaitForSeconds(0.5f);
+        resetBallons(cliente);
         if(!cliente.GetComponent<Cliente>().sucesso){
-            cliente.GetComponent<Cliente>().removeAngryTimeBalloon();
             cliente.GetComponent<Cliente>().showAngryBalloon();
         } 
 

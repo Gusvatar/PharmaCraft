@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class balcao : MonoBehaviour
+public class balcaoPreferencia : MonoBehaviour
 {
     public QueueManager fila;
     private bool playerNearby = false;
@@ -43,9 +43,9 @@ public class balcao : MonoBehaviour
 
     void EntregarRemédio()
     {
-        if(fila.queueSize() > 0){
-            fila.top().GetComponent<Cliente>().sucesso = true;
-            fila.RemoverCliente();
+        if(fila.priorityQueueSize() > 0){
+            fila.priorityTop().GetComponent<Cliente>().sucesso = true;
+            fila.RemoverClientePrioridade();
         }
     }
 }

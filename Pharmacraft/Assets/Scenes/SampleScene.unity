@@ -4082,7 +4082,7 @@ GameObject:
   - component: {fileID: 961423222}
   - component: {fileID: 961423223}
   - component: {fileID: 961423225}
-  - component: {fileID: 961423224}
+  - component: {fileID: 961423226}
   m_Layer: 6
   m_Name: balcao
   m_TagString: balcao
@@ -4119,22 +4119,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fila: {fileID: 1370442150}
   scoreText: {fileID: 114213143}
---- !u!58 &961423224
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 961423221}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.8
 --- !u!50 &961423225
 Rigidbody2D:
   serializedVersion: 4
@@ -4156,6 +4140,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!70 &961423226
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 961423221}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.2734699, y: 0}
+  m_Size: {x: 1.45306, y: 2}
+  m_Direction: 0
 --- !u!1 &1081636310
 GameObject:
   m_ObjectHideFlags: 0
@@ -4517,6 +4517,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1586591006}
+  - component: {fileID: 1586591009}
+  - component: {fileID: 1586591008}
+  - component: {fileID: 1586591007}
   m_Layer: 0
   m_Name: balcao preferecia
   m_TagString: Untagged
@@ -4539,6 +4542,57 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!70 &1586591007
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1586591005}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.27346992, y: 0}
+  m_Size: {x: 1.4530602, y: 2}
+  m_Direction: 0
+--- !u!50 &1586591008
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1586591005}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &1586591009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1586591005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06b023efc5160b545beb50d038c7c965, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fila: {fileID: 1370442150}
+  scoreText: {fileID: 114213143}
 --- !u!1 &1587958088
 GameObject:
   m_ObjectHideFlags: 0
