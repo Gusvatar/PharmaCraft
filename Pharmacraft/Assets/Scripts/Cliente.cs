@@ -11,6 +11,10 @@ public class Cliente : MonoBehaviour
     public float distânciaParadaY = 1f;
     public bool prioridade = false;
 
+    public string[] receita = new string[3];
+
+
+
     private GameObject angryBalloon;
     private GameObject angryTimeBalloon;
     private GameObject mediumBalloon;
