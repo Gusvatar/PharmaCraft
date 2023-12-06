@@ -9,13 +9,15 @@ public class Player : MonoBehaviour
     private Animator anim;
     private Rigidbody2D rb;
     private SpriteRenderer sprite;
-    // Start is called before the first frame update
+
+
     void Start()
     {
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
     }
+
 
    
     private void FixedUpdate()

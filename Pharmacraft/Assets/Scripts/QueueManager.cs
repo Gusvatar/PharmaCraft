@@ -58,25 +58,24 @@ public class QueueManager : MonoBehaviour{
             Destroy(novoCliente);
             return;
         }
+
+        bool isPriority = false;
             
             
         Sprite randomSprite;
 
-        int rand = Random.Range(0, 4);
+        int rand = Random.Range(0, 5);
         //Debug.Log(rand);
-        if(rand == 3 && !clientePrioridadeEmFila){
+        if(rand == 0 && !clientePrioridadeEmFila){
             clientePrioridadeEmFila = true;
+            isPriority = true;
             randomSprite = prioritySprite;
         } else {
-            if(rand <= 3){
-                rand = 2;
-            }
+            rand = Random.Range(0, 2);
             randomSprite = clientSprites[rand];
         }
         novoCliente.GetComponent<SpriteRenderer>().sprite = randomSprite;
 
-
-        bool isPriority = novoCliente.GetComponent<SpriteRenderer>().sprite == prioritySprite;
         if(isPriority){
             filaDePrioridade.Enqueue(novoCliente);
         }else{
@@ -84,13 +83,12 @@ public class QueueManager : MonoBehaviour{
             filaDeClientes.Enqueue(novoCliente);
         }
 
-        
-        if (filaDeClientes.Count == 1) {
-            novoCliente.GetComponent<Cliente>().alvoPosicao = balcao;
-        }
-        else if (isPriority){
+        if(isPriority){
             novoCliente.GetComponent<Cliente>().prioridade = true;
             novoCliente.GetComponent<Cliente>().alvoPosicao = balcaoPrioridade;
+        }
+        else if (filaDeClientes.Count == 1) {
+            novoCliente.GetComponent<Cliente>().alvoPosicao = balcao;
         }
         else {
             GameObject[] filaArray = filaDeClientes.ToArray();

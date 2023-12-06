@@ -6,6 +6,16 @@ public class balcao : MonoBehaviour
 {
     public QueueManager fila;
     private bool playerNearby = false;
+    private int money = 0;
+    public TMPro.TextMeshPro scoreText;
+
+
+    void updateCurrency(int value)
+    {
+        money += value;
+        scoreText.text = money.ToString();
+    }
+
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -28,6 +38,7 @@ public class balcao : MonoBehaviour
         if (playerNearby && Input.GetKeyDown(KeyCode.E))
         {
             EntregarRemédio();
+            updateCurrency(10);
         }
     }
 
