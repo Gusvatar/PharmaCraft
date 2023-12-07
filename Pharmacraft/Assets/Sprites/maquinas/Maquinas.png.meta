@@ -596,7 +596,7 @@ TextureImporter:
         width: 32
         height: 37
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -617,7 +617,7 @@ TextureImporter:
         width: 30
         height: 37
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -625,6 +625,27 @@ TextureImporter:
       bones: []
       spriteID: 942aa6208d1c8f04f9beba47ffeb253f
       internalID: -764302623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MaquinaMixagem
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 695
+        width: 27
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a32d6b235579ee344aad4f5bc81c5762
+      internalID: -194052385
       vertices: []
       indices: 
       edges: []
@@ -661,6 +682,7 @@ TextureImporter:
       Maquinas_8: 271080559
       Maquinas_20: -1221880578
       Maquinas_19: 1032401376
+      MaquinaMixagem: -194052385
       Maquinas_10: -1148370797
       Maquinas_14: -29995365
       Maquinas_16: 1451777124

@@ -7,10 +7,14 @@ public class Machine : MonoBehaviour
     
     public Sprite spriteBranco;
     public Sprite spriteOriginal;
-    public GrabDetecter  player;
+    public GrabDetecter player;
     private SpriteRenderer spriteRenderer;
     private bool playerNearby = false;
     
+
+    public GameObject ingrediente;
+
+
 
      void Start()
     {
@@ -19,21 +23,35 @@ public class Machine : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)// player entrar na area da maquina.
     {
+        
         if (other.CompareTag("Player"))
         {
             playerNearby = true;
             spriteRenderer.sprite = spriteBranco;
         }
+
+        if (other.CompareTag("ItemPegavel"))
+        {
+            
+            if(!player.IsHoldingItem()){
+                Rigidbody2D rb = other.GetComponent<Rigidbody2D>();
+                if (rb != null)
+                {
+                    rb.isKinematic = true;
+                }
+            }else{
+                ingrediente = other.transform.gameObject;
+            }
+        }
     }
     void OnTriggerExit2D(Collider2D other)// player sair da area da maquina.
-{
-    if (other.CompareTag("Player")) 
     {
-        playerNearby = false;
-        spriteRenderer.sprite = spriteOriginal;
-        Debug.Log("O jogador saiu da área da maquina!");
+        if (other.CompareTag("Player")) 
+        {
+            playerNearby = false;
+            spriteRenderer.sprite = spriteOriginal;
+        }
     }
-}
 
     
     // Update is called once per frame
@@ -46,14 +64,11 @@ public class Machine : MonoBehaviour
         else
         {
             Debug.Log("O jogador não está segurando um item!");
-            if(playerNearby) // se o jogador estiver perto
+            if(playerNearby)
             {
-                GameObject item = player.GetHeldItem(); // pegue o item que o jogador estava segurando
-                if(item != null) // se houver um item
+                if(ingrediente != null) // se houver um item
                 {
-                    Debug.Log("CHEGUEI AKI");
-                    item.transform.parent = this.transform; // faça o item ser filho da máquina
-                    item.SetActive(false); // desative o item
+                    ingrediente.transform.parent = transform;
                 }
             }
             

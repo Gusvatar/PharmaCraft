@@ -85,7 +85,9 @@ public class Cliente : MonoBehaviour
         if (direção.magnitude <= distânciaParadaY)
         {
             velocidade = 0;
-            showRecepy();
+
+
+            if(alvoPosicao.GetComponent<balcao>() || alvoPosicao.GetComponent<balcaoPreferencia>()) showRecepy();
             return;
         }else if (!atendido){
             velocidade = 2.0f;

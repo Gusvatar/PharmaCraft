@@ -15,31 +15,60 @@ public class QueueManager : MonoBehaviour{
     public GameObject balcaoPrioridade;
     private bool clientePrioridadeEmFila = false;
     public float tempoParaSerAtendido = 60.0f;
+    public float tempoParaSerAtendidoPrioridade = 50.0f;
 
     public int money = 0;
 
     void Update()
     {
-        bool atendido = top().GetComponent<Cliente>().atendido;
-        if(queueSize() > 0 && !atendido){
 
-            if(tempoParaSerAtendido <= 30 && tempoParaSerAtendido >= 25){
-                top().GetComponent<Cliente>().showMediumBalloon();
-            }else if(tempoParaSerAtendido <= 15 && tempoParaSerAtendido >= 10){
-                top().GetComponent<Cliente>().showAngryTimeBalloon();
-            }else if(tempoParaSerAtendido <= 25){
-                top().GetComponent<Cliente>().removeMediumBalloon();
-                top().GetComponent<Cliente>().removeAngryTimeBalloon();
+        if(queueSize() > 0 && priorityQueueSize() == 0){
+            bool atendido = top().GetComponent<Cliente>().atendido;
+            if(!atendido){
+
+                if(tempoParaSerAtendido <= 30 && tempoParaSerAtendido >= 25){
+                    top().GetComponent<Cliente>().showMediumBalloon();
+                }else if(tempoParaSerAtendido <= 15 && tempoParaSerAtendido >= 10){
+                    top().GetComponent<Cliente>().showAngryTimeBalloon();
+                }else if(tempoParaSerAtendido <= 25){
+                    top().GetComponent<Cliente>().removeMediumBalloon();
+                    top().GetComponent<Cliente>().removeAngryTimeBalloon();
+                }
             }
         }
-        
 
-        tempoParaSerAtendido -= Time.deltaTime;
+        if(priorityQueueSize() > 0){
+            bool atendido = priorityTop().GetComponent<Cliente>().atendido;
+            if(!atendido){
+
+                if(tempoParaSerAtendidoPrioridade <= 30 && tempoParaSerAtendidoPrioridade >= 25){
+                    priorityTop().GetComponent<Cliente>().showMediumBalloon();
+                }else if(tempoParaSerAtendido <= 15 && tempoParaSerAtendido >= 10){
+                    priorityTop().GetComponent<Cliente>().showAngryTimeBalloon();
+                }else if(tempoParaSerAtendido <= 25){
+                    priorityTop().GetComponent<Cliente>().removeMediumBalloon();
+                    priorityTop().GetComponent<Cliente>().removeAngryTimeBalloon();
+                }
+            }
+        }
+
+        if(priorityQueueSize() > 0){
+            tempoParaSerAtendidoPrioridade -= Time.deltaTime;
+        }else{
+            tempoParaSerAtendido -= Time.deltaTime;
+        }
+        
         //Debug.Log(tempoParaSerAtendido);
         if (tempoParaSerAtendido <= 0)
         {
             Debug.Log("Cliente saiu da fila por ter excedido o tempo.");
             RemoverCliente();
+        }
+
+        if (tempoParaSerAtendidoPrioridade <= 0)
+        {
+            Debug.Log("Cliente saiu da fila por ter excedido o tempo.");
+            RemoverClientePrioridade();
         }
         
     }
@@ -52,6 +81,9 @@ public class QueueManager : MonoBehaviour{
     }
 
     public GameObject top(){
+        if(queueSize() == 0){
+            return null;
+        }
         GameObject[] filaArray = filaDeClientes.ToArray();
         return filaArray[0];
     }
@@ -70,7 +102,7 @@ public class QueueManager : MonoBehaviour{
         bool isPriority = false;
 
 
-        Debug.Log(novoCliente.GetComponent<Cliente>().receita[0] + " - " + novoCliente.GetComponent<Cliente>().receita[1] + " - " + novoCliente.GetComponent<Cliente>().receita[2]);
+        //Debug.Log(novoCliente.GetComponent<Cliente>().receita[0] + " - " + novoCliente.GetComponent<Cliente>().receita[1] + " - " + novoCliente.GetComponent<Cliente>().receita[2]);
             
         Sprite randomSprite;
 
@@ -131,12 +163,11 @@ public class QueueManager : MonoBehaviour{
         GameObject[] filaArray = filaDePrioridade.ToArray();
         
         
-        if (filaDeClientes.Count > 0)
+        if (filaDePrioridade.Count > 0)
         {
             GameObject clienteRemovido = filaDePrioridade.Dequeue();
             clienteRemovido.GetComponent<Cliente>().atendido = true;
             StartCoroutine(AnimacaoRemocaoCliente(clienteRemovido));
-            AtualizarFila();
         }
     }
 

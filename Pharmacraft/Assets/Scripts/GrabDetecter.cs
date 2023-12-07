@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GrabDetecter : MonoBehaviour
 {
- public Transform GrabDetect;
+    public Transform GrabDetect;
     public Transform ObjHolder;
     public float rayDist;
     private bool isHoldingItem = false;
@@ -15,13 +15,13 @@ public class GrabDetecter : MonoBehaviour
     }
 
     public GameObject GetHeldItem()
-{
-    if(ObjHolder.childCount > 0)
     {
-        return ObjHolder.GetChild(0).gameObject;
+        if(ObjHolder.childCount > 0)
+        {
+            return ObjHolder.GetChild(0).gameObject;
+        }
+        return null;
     }
-    return null;
-}
 
     // Update is called once per frame
     void Update()
