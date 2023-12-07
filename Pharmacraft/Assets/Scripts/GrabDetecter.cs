@@ -43,4 +43,11 @@ public class GrabDetecter : MonoBehaviour
             }
        }
     }
+
+    public void getItemFromMachine(GameObject item){
+        item.transform.parent = ObjHolder;
+        item.transform.position = ObjHolder.position;
+        item.GetComponent<Rigidbody2D>().isKinematic = true;
+        isHoldingItem = true;
+    }
 }

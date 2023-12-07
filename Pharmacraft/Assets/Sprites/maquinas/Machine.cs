@@ -10,18 +10,23 @@ public class Machine : MonoBehaviour
     public GrabDetecter player;
     private SpriteRenderer spriteRenderer;
     private bool playerNearby = false;
+    private bool isProcessionItem = false;
+
+    
+    
     
 
     public GameObject ingrediente;
-
+    private Vector3 itemStartPosition = new Vector3(0,0,0);
+    private float processTime = 8f;
 
 
      void Start()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>(); // pegue a referência para o SpriteRenderer
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    void OnTriggerEnter2D(Collider2D other)// player entrar na area da maquina.
+    void OnTriggerEnter2D(Collider2D other)
     {
         
         if (other.CompareTag("Player"))
@@ -32,19 +37,12 @@ public class Machine : MonoBehaviour
 
         if (other.CompareTag("ItemPegavel"))
         {
-            
-            if(!player.IsHoldingItem()){
-                Rigidbody2D rb = other.GetComponent<Rigidbody2D>();
-                if (rb != null)
-                {
-                    rb.isKinematic = true;
-                }
-            }else{
+            if(!other.transform.gameObject.GetComponent<Item>().processada){
                 ingrediente = other.transform.gameObject;
             }
         }
     }
-    void OnTriggerExit2D(Collider2D other)// player sair da area da maquina.
+    void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag("Player")) 
         {
@@ -53,25 +51,40 @@ public class Machine : MonoBehaviour
         }
     }
 
-    
-    // Update is called once per frame
     void Update()
     {
-        if(player.IsHoldingItem()) // use o método para verificar
+        if(!player.IsHoldingItem() && !isProcessionItem) 
         {
-            Debug.Log("O jogador está segurando um item!");
-        }
-        else
-        {
-            Debug.Log("O jogador não está segurando um item!");
             if(playerNearby)
             {
-                if(ingrediente != null) // se houver um item
+                if(ingrediente != null) 
                 {
+                    isProcessionItem = true;
+                    itemStartPosition = ingrediente.transform.position;
+                    Debug.Log(itemStartPosition);
+
+                    ingrediente.transform.position = transform.position;
                     ingrediente.transform.parent = transform;
                 }
             }
             
+        }
+
+        if(ingrediente){
+            processTime -= Time.deltaTime;
+        }
+
+        if(ingrediente && processTime <= 0 && !ingrediente.GetComponent<Item>().processada){
+            Debug.Log("Remedio Feito");
+            ingrediente.GetComponent<Item>().processada = true;
+            ingrediente.transform.position = itemStartPosition;
+            ingrediente.transform.parent = null;
+            ingrediente.GetComponent<Rigidbody2D>().isKinematic = false;
+            ingrediente.GetComponent<SpriteRenderer>().sprite = ingrediente.GetComponent<Item>().processedSprite;
+
+            processTime = 8f;
+            ingrediente = null;
+            isProcessionItem = false;
         }
     }
 }

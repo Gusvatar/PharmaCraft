@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class item : MonoBehaviour
+public class Item : MonoBehaviour
 {
     public bool processada = false;
+    public Sprite processedSprite;
+
     void Start()
     {
         
@@ -13,6 +15,5 @@ public class item : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
     }
 }

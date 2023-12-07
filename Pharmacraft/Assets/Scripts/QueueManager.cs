@@ -153,6 +153,7 @@ public class QueueManager : MonoBehaviour{
         {
             tempoParaSerAtendido = 65.0f;
             GameObject clienteRemovido = filaDeClientes.Dequeue();
+            clienteRemovido.GetComponent<Cliente>().closeRecepy();
             clienteRemovido.GetComponent<Cliente>().atendido = true;
             StartCoroutine(AnimacaoRemocaoCliente(clienteRemovido));
             if (filaDeClientes.Count > 0) AtualizarFila();
@@ -166,6 +167,7 @@ public class QueueManager : MonoBehaviour{
         if (filaDePrioridade.Count > 0)
         {
             GameObject clienteRemovido = filaDePrioridade.Dequeue();
+            clienteRemovido.GetComponent<Cliente>().closeRecepy();
             clienteRemovido.GetComponent<Cliente>().atendido = true;
             StartCoroutine(AnimacaoRemocaoCliente(clienteRemovido));
         }

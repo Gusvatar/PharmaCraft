@@ -167,6 +167,69 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: recepy_blue
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 63
+        width: 15
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff05f366e7528694b9d418f508bca4b4
+      internalID: -2049321846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recepy_red
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 63
+        width: 15
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c985503b23b52584abfa74f9ea2bf6f8
+      internalID: -508928670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recepy_green
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 62
+        width: 15
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4451e5adb8559343af36aa4dd95c76e
+      internalID: 903398605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -180,7 +243,10 @@ TextureImporter:
     nameFileIdTable:
       blue_recepy: 1883515051
       red_recepy: 1434940572
+      recepy_red: -508928670
+      recepy_blue: -2049321846
       green_recepy: -871024088
+      recepy_green: 903398605
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
