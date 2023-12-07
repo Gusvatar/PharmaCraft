@@ -6,6 +6,7 @@ public class Item : MonoBehaviour
 {
     public bool processada = false;
     public Sprite processedSprite;
+    public int value = 1;
 
     void Start()
     {

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 621008512102867590}
   - component: {fileID: 621008512102867586}
-  - component: {fileID: 621008512102867589}
+  - component: {fileID: 2957797040689835261}
   - component: {fileID: 621008512102867588}
   - component: {fileID: 621008512102867591}
   m_Layer: 0
@@ -87,7 +87,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &621008512102867589
+--- !u!114 &2957797040689835261
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -96,12 +96,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 621008512102867609}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b3898d37dbb76240874b2ac9d5b84d8, type: 3}
+  m_Script: {fileID: 11500000, guid: 26c23617ffd9e3c4eafd9544365d3df6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   spriteBranco: {fileID: -194052385, guid: dc18d9f154083964aa305a2451f71f6b, type: 3}
   spriteOriginal: {fileID: -194052385, guid: dc18d9f154083964aa305a2451f71f6b, type: 3}
   player: {fileID: 0}
+  recepy: 000000000000000000000000
+  remedyPrefab: {fileID: 0}
   ingrediente: {fileID: 0}
 --- !u!58 &621008512102867588
 CircleCollider2D:

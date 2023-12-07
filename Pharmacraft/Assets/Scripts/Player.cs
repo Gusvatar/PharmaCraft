@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     private Rigidbody2D rb;
     private SpriteRenderer sprite;
 
+    public int[] recepy = new int[3];
 
     void Start()
     {

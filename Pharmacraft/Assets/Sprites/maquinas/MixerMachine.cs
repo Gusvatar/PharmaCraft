@@ -2,17 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Machine : MonoBehaviour
+public class MixerMachine : MonoBehaviour
 {
-    
-    public Sprite spriteBranco;
+     public Sprite spriteBranco;
     public Sprite spriteOriginal;
+
     public GrabDetecter player;
     private SpriteRenderer spriteRenderer;
     private bool playerNearby = false;
     private bool isProcessionItem = false;
 
-    
+    public int[] recepy = new int[3];
+    private int recepyIndex = 0;
+    public GameObject remedyPrefab; 
+
     
     
 
@@ -20,6 +23,12 @@ public class Machine : MonoBehaviour
     private Vector3 itemStartPosition = new Vector3(0,0,0);
     private float processTime = 8f;
 
+
+
+    public void addToRecepy(GameObject item){
+        recepy[recepyIndex++] = item.GetComponent<Item>().value;
+        if(recepyIndex==2) isProcessionItem = true;
+    }
 
      void Start()
     {
@@ -35,9 +44,9 @@ public class Machine : MonoBehaviour
             spriteRenderer.sprite = spriteBranco;
         }
 
-        if (other.CompareTag("ItemPegavel") && !ingrediente)
+        if (other.CompareTag("ItemPegavel"))
         {
-            if(!other.transform.gameObject.GetComponent<Item>().processada){
+            if(other.transform.gameObject.GetComponent<Item>().processada){
                 ingrediente = other.transform.gameObject;
             }
         }
@@ -53,7 +62,7 @@ public class Machine : MonoBehaviour
 
     void Update()
     {
-        if(!player.IsHoldingItem() && !isProcessionItem) 
+        if(!player.IsHoldingItem() && recepyIndex != 3) 
         {
             if(playerNearby)
             {
@@ -65,22 +74,28 @@ public class Machine : MonoBehaviour
 
                     ingrediente.transform.position = transform.position;
                     ingrediente.transform.parent = transform;
+
+                    addToRecepy(ingrediente);
+                    Destroy(ingrediente);
+                    ingrediente = null;
                 }
             }
             
         }
 
-        if(ingrediente){
+        if(isProcessionItem){
             processTime -= Time.deltaTime;
         }
 
-        if(ingrediente && processTime <= 0 && !ingrediente.GetComponent<Item>().processada){
+        if(recepyIndex == 3 && processTime <= 0){
+            GameObject Remedio = Instantiate(remedyPrefab, remedyPrefab.transform.position, Quaternion.identity);
+            Remedio.GetComponent<Recepy>().recepy = recepy;
+
             Debug.Log("Remedio Feito");
-            ingrediente.GetComponent<Item>().processada = true;
-            ingrediente.transform.position = itemStartPosition;
-            ingrediente.transform.parent = null;
-            ingrediente.GetComponent<Rigidbody2D>().isKinematic = false;
-            ingrediente.GetComponent<SpriteRenderer>().sprite = ingrediente.GetComponent<Item>().processedSprite;
+            Remedio.GetComponent<Item>().processada = true;
+            Remedio.transform.position = itemStartPosition;
+            Remedio.transform.parent = null;
+            Remedio.GetComponent<Rigidbody2D>().isKinematic = false;
 
             processTime = 8f;
             ingrediente = null;
