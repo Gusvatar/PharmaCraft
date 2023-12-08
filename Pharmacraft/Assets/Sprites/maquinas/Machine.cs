@@ -49,6 +49,11 @@ public class Machine : MonoBehaviour
             playerNearby = false;
             spriteRenderer.sprite = spriteOriginal;
         }
+
+        if (other.CompareTag("ItemPegavel"))
+        {
+            ingrediente = null; 
+        }
     }
 
     void Update()
