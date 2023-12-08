@@ -3935,7 +3935,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gerenciadorFilaClientes: {fileID: 1370442150}
   clientePrefab: {fileID: 5179017952853965971, guid: 544b94d47336ce7448d00ed26a4ade27, type: 3}
-  intervaloDeAdicao: 5
+  intervaloDeAdicao: 20
 --- !u!114 &1370442150
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10528,6 +10528,10 @@ PrefabInstance:
       objectReference: {fileID: 937515174}
     - target: {fileID: 2957797040689835261, guid: 296495dbae0558a489ad04b2ae0c3d59, type: 3}
       propertyPath: Remedio
+      value: 
+      objectReference: {fileID: 6434377182125660367, guid: a670430ad98076548ace06ee22457849, type: 3}
+    - target: {fileID: 2957797040689835261, guid: 296495dbae0558a489ad04b2ae0c3d59, type: 3}
+      propertyPath: remedyPrefab
       value: 
       objectReference: {fileID: 6434377182125660367, guid: a670430ad98076548ace06ee22457849, type: 3}
     m_RemovedComponents: []

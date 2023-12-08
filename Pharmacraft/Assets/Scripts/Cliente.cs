@@ -26,6 +26,7 @@ public class Cliente : MonoBehaviour
     private GameObject recepy1;
     private GameObject recepy2;
     private GameObject recepy3;
+    public bool visibleRecepy = true;
 
 
     private void Start()
@@ -85,9 +86,9 @@ public class Cliente : MonoBehaviour
         if (direção.magnitude <= distânciaParadaY)
         {
             velocidade = 0;
-
-
-            if(alvoPosicao.GetComponent<balcao>() || alvoPosicao.GetComponent<balcaoPreferencia>()) showRecepy();
+            
+            if(visibleRecepy && !atendido && (alvoPosicao.GetComponent<balcao>() || alvoPosicao.GetComponent<balcaoPreferencia>())) showRecepy();
+            else closeRecepy();
             return;
         }else if (!atendido){
             velocidade = 2.0f;

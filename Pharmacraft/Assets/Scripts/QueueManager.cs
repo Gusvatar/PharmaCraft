@@ -54,7 +54,10 @@ public class QueueManager : MonoBehaviour{
 
         if(priorityQueueSize() > 0){
             tempoParaSerAtendidoPrioridade -= Time.deltaTime;
-            if(queueSize() > 0) top().GetComponent<Cliente>().closeRecepy();
+            if(queueSize() > 0){
+                top().GetComponent<Cliente>().visibleRecepy = false;
+                top().GetComponent<Cliente>().closeRecepy(); 
+            } 
         }else{
             tempoParaSerAtendido -= Time.deltaTime;
         }
@@ -171,6 +174,8 @@ public class QueueManager : MonoBehaviour{
             clienteRemovido.GetComponent<Cliente>().closeRecepy();
             clienteRemovido.GetComponent<Cliente>().atendido = true;
             StartCoroutine(AnimacaoRemocaoCliente(clienteRemovido));
+
+            if(queueSize() > 0) top().GetComponent<Cliente>().visibleRecepy = true;
         }
     }
 
