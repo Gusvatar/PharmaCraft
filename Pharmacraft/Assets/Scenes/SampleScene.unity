@@ -3637,7 +3637,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 937515165}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 39, y: 7.93, z: 0}
+  m_LocalPosition: {x: 38.13, y: 7.98, z: 0}
   m_LocalScale: {x: 1, y: 1.0262, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4357,11 +4357,11 @@ PrefabInstance:
     - target: {fileID: 3535993151344436202, guid: cc564ae72a082a7458d886f225819d72, type: 3}
       propertyPath: spriteBranco
       value: 
-      objectReference: {fileID: 1954588022, guid: c88bccc4c59326b46887692d3977ea27, type: 3}
+      objectReference: {fileID: 271080559, guid: dc18d9f154083964aa305a2451f71f6b, type: 3}
     - target: {fileID: 3535993151344436202, guid: cc564ae72a082a7458d886f225819d72, type: 3}
       propertyPath: spriteOriginal
       value: 
-      objectReference: {fileID: 271080559, guid: dc18d9f154083964aa305a2451f71f6b, type: 3}
+      objectReference: {fileID: 1954588022, guid: c88bccc4c59326b46887692d3977ea27, type: 3}
     - target: {fileID: 3535993151344436204, guid: cc564ae72a082a7458d886f225819d72, type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.x
       value: 2.75
@@ -10547,6 +10547,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 937515174}
+    - target: {fileID: 3582911865832440652, guid: 7f1e945289ddab84badbafa5bf5d0085, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1774421452, guid: dc18d9f154083964aa305a2451f71f6b, type: 3}
     - target: {fileID: 3582911865832440653, guid: 7f1e945289ddab84badbafa5bf5d0085, type: 3}
       propertyPath: m_Name
       value: Estante
