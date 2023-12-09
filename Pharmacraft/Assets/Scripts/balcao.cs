@@ -57,7 +57,7 @@ public class balcao : MonoBehaviour
             Destroy(remedio);
             remedio = null;
             updateCurrency(value);
-            if(value >= 10){
+            if(value >= 150){
                 SceneManager.LoadScene("Vitoria Tutorial");
             }
             

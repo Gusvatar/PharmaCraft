@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameOver Tutorial.unity
     guid: 640a058892900d24dbc0da92f9e72d5d
+  - enabled: 1
+    path: Assets/Scenes/Vitoria Tutorial.unity
+    guid: e0d00c5bfcae8894ca2b8ebd01890b00
   m_configObjects: {}

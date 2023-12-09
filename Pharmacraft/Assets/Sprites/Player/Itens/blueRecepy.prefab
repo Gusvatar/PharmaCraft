@@ -148,3 +148,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   processada: 0
   processedSprite: {fileID: -2049321846, guid: 50548dbf8e40d654dba976c0e2afbccd, type: 3}
+  value: 1

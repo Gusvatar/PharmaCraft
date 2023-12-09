@@ -39,7 +39,7 @@ public class Machine : MonoBehaviour
 
         if (other.CompareTag("ItemPegavel") && !ingrediente)
         {
-            if(!other.transform.gameObject.GetComponent<Item>().processada){
+            if(!other.transform.gameObject.GetComponent<Item>().processada && !isProcessionItem){
                 ingrediente = other.transform.gameObject;
 
                 if(ingrediente.GetComponent<Item>().value != value){
@@ -56,7 +56,7 @@ public class Machine : MonoBehaviour
             spriteRenderer.sprite = spriteOriginal;
         }
 
-        if (other.CompareTag("ItemPegavel"))
+        if (other.CompareTag("ItemPegavel") && !isProcessionItem)
         {
             ingrediente = null; 
         }
