@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement; 
 
 public class balcaoPreferencia : MonoBehaviour
 {
@@ -54,6 +55,10 @@ public class balcaoPreferencia : MonoBehaviour
             Destroy(remedio);
             remedio = null;
             updateCurrency(value);
+            if(value >= 150){
+                SceneManager.LoadScene("Vitoria Tutorial");
+            }
         }
+        
     }
 }

@@ -37,7 +37,6 @@ public class Cliente : MonoBehaviour
             if(remedio[j] == receita[j]) i++;
         }
 
-
         return i*10;
     }
 

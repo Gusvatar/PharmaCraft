@@ -619,6 +619,7 @@ MonoBehaviour:
   - {fileID: 1883515051, guid: 50548dbf8e40d654dba976c0e2afbccd, type: 3}
   - {fileID: -871024088, guid: 50548dbf8e40d654dba976c0e2afbccd, type: 3}
   - {fileID: 1434940572, guid: 50548dbf8e40d654dba976c0e2afbccd, type: 3}
+  visibleRecepy: 1
 --- !u!1 &7689834922609087722
 GameObject:
   m_ObjectHideFlags: 0
