@@ -12,6 +12,8 @@ public class Machine : MonoBehaviour
     private bool playerNearby = false;
     private bool isProcessionItem = false;
 
+
+    public int value = 0;
     
     
     
@@ -39,6 +41,10 @@ public class Machine : MonoBehaviour
         {
             if(!other.transform.gameObject.GetComponent<Item>().processada){
                 ingrediente = other.transform.gameObject;
+
+                if(ingrediente.GetComponent<Item>().value != value){
+                    ingrediente = null;
+                }
             }
         }
     }
