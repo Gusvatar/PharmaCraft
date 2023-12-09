@@ -82,6 +82,18 @@ public class Cliente : MonoBehaviour
     }
 
     public void loadRecepySprits(){
+        if(prioridade){
+            recepy1.transform.position = transform.position - new Vector3(1.5f, 0, 0);
+            recepy1.transform.localRotation = Quaternion.Euler(0, 180, 0);
+
+            recepy2.transform.position = transform.position - new Vector3(1, 0, 0);
+            recepy2.transform.localRotation = Quaternion.Euler(0, 180, 0);
+
+            recepy3.transform.position = transform.position - new Vector3(0.5f, 0, 0);
+            recepy3.transform.localRotation = Quaternion.Euler(0, 180, 0);
+        }
+
+
         recepy1.GetComponent<SpriteRenderer>().sprite = recepySprites[receita[0]];
         recepy2.GetComponent<SpriteRenderer>().sprite = recepySprites[receita[1]];
         recepy3.GetComponent<SpriteRenderer>().sprite = recepySprites[receita[2]];

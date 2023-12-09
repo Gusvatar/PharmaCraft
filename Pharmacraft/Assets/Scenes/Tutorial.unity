@@ -3945,7 +3945,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gerenciadorFilaClientes: {fileID: 1370442150}
   clientePrefab: {fileID: 5179017952853965971, guid: 544b94d47336ce7448d00ed26a4ade27, type: 3}
-  intervaloDeAdicao: 20
+  intervaloDeAdicao: 1
 --- !u!114 &1370442150
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3963,7 +3963,7 @@ MonoBehaviour:
   - {fileID: 1781911396, guid: 390a55ed93d95984bae1ec8d330ca32e, type: 3}
   - {fileID: 1967908841, guid: c5c72006d32921e4c957dc659d29f83b, type: 3}
   - {fileID: 362591945, guid: 5c06662af6145e740b622718636b7200, type: 3}
-  maxQueue: 6
+  maxQueue: 15
   balcao: {fileID: 961423221}
   balcaoPrioridade: {fileID: 1586591005}
   tempoParaSerAtendido: 60
@@ -4280,6 +4280,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fila: {fileID: 1370442150}
   scoreText: {fileID: 114213143}
+  remedio: {fileID: 0}
 --- !u!1 &1587958088
 GameObject:
   m_ObjectHideFlags: 0
