@@ -918,6 +918,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -2850446369347387730, guid: 5cb50a7f65312f04fb16ba27c7fcba21, type: 3}
+      propertyPath: value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5407273264031523704, guid: 5cb50a7f65312f04fb16ba27c7fcba21, type: 3}
       propertyPath: m_Name
       value: greenRecepy
@@ -3576,7 +3580,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 10
-  recepy: 000000000000000000000000
+  remedio: {fileID: 0}
 --- !u!212 &937515168
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3768,6 +3772,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fila: {fileID: 1370442150}
   scoreText: {fileID: 114213143}
+  player: {fileID: 0}
+  remedio: {fileID: 0}
 --- !u!50 &961423225
 Rigidbody2D:
   serializedVersion: 4
@@ -3853,6 +3859,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -2850446369347387730, guid: e166aa4248de09b4eba03ff9f21fb0da, type: 3}
+      propertyPath: value
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5407273264031523704, guid: e166aa4248de09b4eba03ff9f21fb0da, type: 3}
       propertyPath: m_Name
       value: redRecepy
@@ -10608,6 +10618,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -2850446369347387730, guid: ff651d337cd0fc24baac55f2ed93b5e6, type: 3}
+      propertyPath: value
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5407273264031523704, guid: ff651d337cd0fc24baac55f2ed93b5e6, type: 3}
       propertyPath: m_Name
       value: exemploItem

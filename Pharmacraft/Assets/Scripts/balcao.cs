@@ -7,7 +7,9 @@ public class balcao : MonoBehaviour
     public QueueManager fila;
     private bool playerNearby = false;
     public TMPro.TextMeshPro scoreText;
+    public Player player;
 
+    public GameObject remedio;
 
     void updateCurrency(int value)
     {
@@ -21,6 +23,7 @@ public class balcao : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerNearby = true;
+            remedio = other.transform.gameObject.GetComponent<GrabDetecter>().GetHeldItem();
         }
     }
 
@@ -29,6 +32,7 @@ public class balcao : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerNearby = false;
+            remedio = null;
         }
     }
 
@@ -37,15 +41,21 @@ public class balcao : MonoBehaviour
         if (playerNearby && Input.GetKeyDown(KeyCode.E))
         {
             EntregarRemédio();
-            updateCurrency(10);
         }
     }
 
     void EntregarRemédio()
     {
-        if(fila.queueSize() > 0){
+        if(fila.queueSize() > 0 && remedio){
+            remedio.transform.parent = fila.top().transform;
+            int value = fila.top().GetComponent<Cliente>().validRecepy(remedio.GetComponent<Recepy>().recepy);
+
             fila.top().GetComponent<Cliente>().sucesso = true;
             fila.RemoverCliente();
+
+            Destroy(remedio);
+            remedio = null;
+            updateCurrency(value);
         }
     }
 }

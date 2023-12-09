@@ -29,6 +29,19 @@ public class Cliente : MonoBehaviour
     public bool visibleRecepy = true;
 
 
+
+    public int validRecepy(int[] remedio){
+        int i = 0;
+
+        for(int j=0;j<3;j++){
+            if(remedio[j] == receita[j]) i++;
+        }
+
+
+        return i*10;
+    }
+
+
     private void Start()
     {
         angryBalloon = transform.GetChild(0).gameObject;
