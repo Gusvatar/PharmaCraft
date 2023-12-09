@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9cadc4fb4e5ceeb48a8eb08360dcb648
+guid: 6efb05fc2f8700d41a6d9eee1bfefc4b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 60
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -105,13 +105,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: UI_48x48_0
+      name: Keyboard_Letters_and_Symbols 1_0
       rect:
         serializedVersion: 2
-        x: 195
-        y: 694
-        width: 42
-        height: 43
+        x: 64
+        y: 178
+        width: 15
+        height: 13
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -119,20 +119,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0cb77bf8ca956f7488bd08da35a8e3a1
-      internalID: 90269495
+      spriteID: 097354063fd89184fbbfa3ed887be62e
+      internalID: -166403696
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UI_48x48_1
+      name: Keyboard_Letters_and_Symbols 1_1
       rect:
         serializedVersion: 2
-        x: 239
-        y: 693
-        width: 49
-        height: 56
+        x: 17
+        y: 162
+        width: 13
+        height: 13
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,8 +140,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cc3ed50e927813848aa3eaa774ac8bad
-      internalID: 1562021314
+      spriteID: 128d07b0777c47e4fa8852b0449d9709
+      internalID: 863402205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard_Letters_and_Symbols 1_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 162
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa9f157df8b1de943a9db74f9d0df71d
+      internalID: -116586053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keyboard_Letters_and_Symbols 1_3
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 162
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 438bbee5f44be2d438df6c2f52d448f5
+      internalID: -1327594535
       vertices: []
       indices: 
       edges: []
@@ -157,8 +199,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      UI_48x48_1: 1562021314
-      UI_48x48_0: 90269495
+      Keyboard_Letters_and_Symbols 1_0: -166403696
+      Keyboard_Letters_and_Symbols 1_3: -1327594535
+      Keyboard_Letters_and_Symbols 1_2: -116586053
+      Keyboard_Letters_and_Symbols 1_1: 863402205
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

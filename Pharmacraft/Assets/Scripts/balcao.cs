@@ -11,6 +11,15 @@ public class balcao : MonoBehaviour
     public Player player;
 
     public GameObject remedio;
+    
+    public GameObject label;
+
+
+
+    private void Start()
+    {
+        label = transform.GetChild(0).gameObject;
+    }
 
     void updateCurrency(int value)
     {
@@ -25,6 +34,8 @@ public class balcao : MonoBehaviour
         {
             playerNearby = true;
             remedio = other.transform.gameObject.GetComponent<GrabDetecter>().GetHeldItem();
+
+            label.SetActive(true);
         }
     }
 
@@ -34,6 +45,8 @@ public class balcao : MonoBehaviour
         {
             playerNearby = false;
             remedio = null;
+            
+            label.SetActive(false);
         }
     }
 

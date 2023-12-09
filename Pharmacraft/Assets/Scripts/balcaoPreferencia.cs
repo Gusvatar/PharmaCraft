@@ -11,6 +11,14 @@ public class balcaoPreferencia : MonoBehaviour
 
     public GameObject remedio;
 
+    public GameObject label;
+
+
+    private void Start()
+    {
+        label = transform.GetChild(0).gameObject;
+    }
+
     void updateCurrency(int value)
     {
         fila.money += value;
@@ -24,6 +32,8 @@ public class balcaoPreferencia : MonoBehaviour
         {
             playerNearby = true;
             remedio = other.transform.gameObject.GetComponent<GrabDetecter>().GetHeldItem();
+            
+            label.SetActive(true);
         }
     }
 
@@ -32,6 +42,8 @@ public class balcaoPreferencia : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerNearby = false;
+
+            label.SetActive(false);
         }
     }
 

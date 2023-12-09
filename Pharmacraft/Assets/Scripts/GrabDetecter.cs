@@ -30,6 +30,8 @@ public class GrabDetecter : MonoBehaviour
 
         if (grabCheck.collider != null && grabCheck.collider.tag == "ItemPegavel")
         {
+
+
             if (Input.GetKey(KeyCode.Space))
             {
                 if (!isHoldingItem)
