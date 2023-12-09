@@ -70,6 +70,9 @@ public class Machine : MonoBehaviour
             {
                 if(ingrediente != null) 
                 {
+                    // Audio processando
+
+
                     isProcessionItem = true;
                     itemStartPosition = ingrediente.transform.position;
                     Debug.Log(itemStartPosition);
@@ -86,6 +89,8 @@ public class Machine : MonoBehaviour
         }
 
         if(ingrediente && processTime <= 0 && !ingrediente.GetComponent<Item>().processada){
+            // Audio final processando items
+
             Debug.Log("Remedio Feito");
             ingrediente.GetComponent<Item>().processada = true;
             ingrediente.transform.position = itemStartPosition;

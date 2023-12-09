@@ -61,6 +61,12 @@ public class balcaoPreferencia : MonoBehaviour
             remedio.transform.parent = fila.priorityTop().transform;
             int value = fila.priorityTop().GetComponent<Cliente>().validRecepy(remedio.GetComponent<Recepy>().recepy);
 
+            if(value <= 10){
+                // Audio remedio errado
+            }else{
+                // Audio remedio certo
+            }
+
             fila.priorityTop().GetComponent<Cliente>().sucesso = true;
             fila.RemoverClientePrioridade();
 
