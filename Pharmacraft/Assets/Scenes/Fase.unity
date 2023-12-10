@@ -4448,7 +4448,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gerenciadorFilaClientes: {fileID: 1370442150}
   clientePrefab: {fileID: 5179017952853965971, guid: 544b94d47336ce7448d00ed26a4ade27, type: 3}
-  intervaloDeAdicao: 40
+  intervaloDeAdicao: 25
 --- !u!114 &1370442150
 MonoBehaviour:
   m_ObjectHideFlags: 0
