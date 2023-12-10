@@ -1009,7 +1009,7 @@ PrefabInstance:
     - target: {fileID: -2850446369347387730, guid: 5cb50a7f65312f04fb16ba27c7fcba21, type: 3}
       propertyPath: processedSprite
       value: 
-      objectReference: {fileID: 1986107046, guid: 58a4b79e7ccbef3488191234f775fd89, type: 3}
+      objectReference: {fileID: 903398605, guid: 50548dbf8e40d654dba976c0e2afbccd, type: 3}
     - target: {fileID: 5407273264031523699, guid: 5cb50a7f65312f04fb16ba27c7fcba21, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
       value: 0.5
@@ -4330,7 +4330,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gerenciadorFilaClientes: {fileID: 1370442150}
   clientePrefab: {fileID: 5179017952853965971, guid: 544b94d47336ce7448d00ed26a4ade27, type: 3}
-  intervaloDeAdicao: 1
+  intervaloDeAdicao: 20
 --- !u!114 &1370442150
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4779,7 +4779,7 @@ PrefabInstance:
     - target: {fileID: 3535993151344436202, guid: cc564ae72a082a7458d886f225819d72, type: 3}
       propertyPath: spriteBranco
       value: 
-      objectReference: {fileID: -2067409125, guid: dc18d9f154083964aa305a2451f71f6b, type: 3}
+      objectReference: {fileID: -404712909, guid: dc18d9f154083964aa305a2451f71f6b, type: 3}
     - target: {fileID: 3535993151344436202, guid: cc564ae72a082a7458d886f225819d72, type: 3}
       propertyPath: spriteOriginal
       value: 
@@ -11251,7 +11251,7 @@ PrefabInstance:
     - target: {fileID: 2957797040689835261, guid: 296495dbae0558a489ad04b2ae0c3d59, type: 3}
       propertyPath: spriteBranco
       value: 
-      objectReference: {fileID: -929444157, guid: 58a4b79e7ccbef3488191234f775fd89, type: 3}
+      objectReference: {fileID: -929444157, guid: 1847ba385c01da9489e71b5696b17f93, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 296495dbae0558a489ad04b2ae0c3d59, type: 3}
 --- !u!1001 &3582911865416594109

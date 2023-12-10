@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MixerMachine : MonoBehaviour
 {
-     public Sprite spriteBranco;
+    public Sprite spriteBranco;
     public Sprite spriteOriginal;
 
     public GrabDetecter player;
@@ -97,9 +97,12 @@ public class MixerMachine : MonoBehaviour
             Remedio.transform.parent = null;
             Remedio.GetComponent<Rigidbody2D>().isKinematic = false;
 
+
             processTime = 8f;
             ingrediente = null;
             isProcessionItem = false;
+            recepyIndex = 0;
+            recepy = new int[3];
         }
     }
 }

@@ -54,10 +54,6 @@ public class QueueManager : MonoBehaviour{
 
         if(priorityQueueSize() > 0){
             tempoParaSerAtendidoPrioridade -= Time.deltaTime;
-            if(queueSize() > 0){
-                top().GetComponent<Cliente>().visibleRecepy = false;
-                top().GetComponent<Cliente>().closeRecepy(); 
-            } 
         }else{
             tempoParaSerAtendido -= Time.deltaTime;
         }
