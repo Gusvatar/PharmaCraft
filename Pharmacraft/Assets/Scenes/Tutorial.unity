@@ -4475,7 +4475,7 @@ MonoBehaviour:
   timeText: {fileID: 452310400}
   faseTime: 240
   tutorial: 1
-  victoryScore: 10
+  victoryScore: 120
 --- !u!4 &1370442151
 Transform:
   m_ObjectHideFlags: 0

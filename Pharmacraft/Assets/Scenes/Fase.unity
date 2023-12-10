@@ -4473,9 +4473,9 @@ MonoBehaviour:
   tempoParaSerAtendidoPrioridade: 50
   money: 0
   timeText: {fileID: 452310400}
-  faseTime: 240
+  faseTime: 480
   tutorial: 0
-  victoryScore: 10
+  victoryScore: 250
 --- !u!4 &1370442151
 Transform:
   m_ObjectHideFlags: 0
