@@ -52,9 +52,9 @@ public class MixerMachine : MonoBehaviour
 
         if (other.CompareTag("ItemPegavel"))
         {
-            if(other.transform.gameObject.GetComponent<Item>().processada){
+            bool processed =  other.transform.gameObject.GetComponent<Item>().processada;
+            if(!other.transform.gameObject.GetComponent<Recepy>() && processed)
                 ingrediente = other.transform.gameObject;
-            }
         }
     }
     void OnTriggerExit2D(Collider2D other)
@@ -111,8 +111,8 @@ public class MixerMachine : MonoBehaviour
             processTime = 8f;
             ingrediente = null;
             isProcessionItem = false;
+
             recepyIndex = 0;
-            recepy = new int[3];
         }
     }
 }

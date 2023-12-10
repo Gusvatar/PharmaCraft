@@ -10,7 +10,7 @@ public class Shelf : MonoBehaviour
     // Método para spawnar o primeiro item
     public void SpawnItem1()
     {
-        GameObject item = Instantiate(items[0], spawnPoint.position, Quaternion.identity);
+        GameObject item = Instantiate(items[0], spawnPoint.position - new Vector3(0.5f, 0 ,0 ), Quaternion.identity);
     }
 
     // Método para spawnar o segundo item
@@ -22,6 +22,6 @@ public class Shelf : MonoBehaviour
     // Método para spawnar o terceiro item
     public void SpawnItem3()
     {
-        GameObject item = Instantiate(items[2], spawnPoint.position, Quaternion.identity);
+        GameObject item = Instantiate(items[2], spawnPoint.position + new Vector3(0.5f, 0 ,0 ), Quaternion.identity);
     }
 }

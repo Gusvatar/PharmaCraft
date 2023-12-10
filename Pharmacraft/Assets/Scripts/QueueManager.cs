@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class QueueManager : MonoBehaviour{
 
@@ -19,8 +20,17 @@ public class QueueManager : MonoBehaviour{
 
     public int money = 0;
 
+    public TMPro.TextMeshPro timeText;
+    public float faseTime = 5;
+
+
+    public int victoryScore = 30;
+
     void Update()
     {
+        if(money >= victoryScore){
+            SceneManager.LoadScene("Vitoria Tutorial");
+        }
 
         if(queueSize() > 0 && priorityQueueSize() == 0){
             bool atendido = top().GetComponent<Cliente>().atendido;
@@ -56,6 +66,14 @@ public class QueueManager : MonoBehaviour{
             tempoParaSerAtendidoPrioridade -= Time.deltaTime;
         }else{
             tempoParaSerAtendido -= Time.deltaTime;
+        }
+
+        faseTime -= Time.deltaTime;
+        timeText.text =((int)faseTime).ToString();
+
+
+        if(faseTime <= 0){
+            SceneManager.LoadScene("GameOver Tutorial");
         }
         
         //Debug.Log(tempoParaSerAtendido);

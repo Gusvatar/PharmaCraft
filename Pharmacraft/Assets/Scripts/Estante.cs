@@ -7,7 +7,6 @@ public class Estante : MonoBehaviour
     public Sprite spriteBranco;
     public Sprite spriteOriginal;
     private SpriteRenderer spriteRenderer;
-    private bool playerNearby = false;
      
     public GameObject label1;
     public GameObject label2;
@@ -27,7 +26,6 @@ public class Estante : MonoBehaviour
         
         if (other.CompareTag("Player"))
         {
-            playerNearby = true;
             spriteRenderer.sprite = spriteBranco;
 
             label1.SetActive(true);
@@ -39,7 +37,6 @@ public class Estante : MonoBehaviour
     {
         if (other.CompareTag("Player")) 
         {
-            playerNearby = false;
             spriteRenderer.sprite = spriteOriginal;
 
             label1.SetActive(false);

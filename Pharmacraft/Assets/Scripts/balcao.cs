@@ -20,7 +20,6 @@ public class balcao : MonoBehaviour
 
     public AudioClip RemedioCorreto;
 
-    public AudioClip MusicaVitoria;
 
 
 
@@ -87,12 +86,6 @@ public class balcao : MonoBehaviour
             Destroy(remedio);
             remedio = null;
             updateCurrency(value);
-            if(value >= 10){
-                Audio.clip = MusicaVitoria;
-                Audio.Play();
-                SceneManager.LoadScene("Vitoria Tutorial");
-            }
-            
         }
        
     }

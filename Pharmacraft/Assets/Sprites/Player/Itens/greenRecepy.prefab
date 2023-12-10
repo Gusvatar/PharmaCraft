@@ -232,5 +232,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   processada: 0
-  processedSprite: {fileID: 903398605, guid: 50548dbf8e40d654dba976c0e2afbccd, type: 3}
+  processedSprite: {fileID: 903398605, guid: 5ae3e489deb630947a18e7c642d69669, type: 3}
   value: 1
+  label: {fileID: 0}
