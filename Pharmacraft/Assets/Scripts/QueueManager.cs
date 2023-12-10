@@ -23,13 +23,17 @@ public class QueueManager : MonoBehaviour{
     public TMPro.TextMeshPro timeText;
     public float faseTime = 5;
 
+    public bool tutorial = true;
+
 
     public int victoryScore = 30;
 
     void Update()
     {
-        if(money >= victoryScore){
+        if(money >= victoryScore && tutorial){
             SceneManager.LoadScene("Vitoria Tutorial");
+        } else if(money >= victoryScore){
+            SceneManager.LoadScene("Vitoria Fase");
         }
 
         if(queueSize() > 0 && priorityQueueSize() == 0){
@@ -72,8 +76,10 @@ public class QueueManager : MonoBehaviour{
         timeText.text =((int)faseTime).ToString();
 
 
-        if(faseTime <= 0){
+        if(faseTime <= 0 && tutorial){
             SceneManager.LoadScene("GameOver Tutorial");
+        } else if (faseTime <= 0) {
+            SceneManager.LoadScene("GameOver");
         }
         
         //Debug.Log(tempoParaSerAtendido);

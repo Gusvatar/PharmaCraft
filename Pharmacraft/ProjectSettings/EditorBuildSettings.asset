@@ -17,4 +17,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Vitoria Tutorial.unity
     guid: e0d00c5bfcae8894ca2b8ebd01890b00
+  - enabled: 1
+    path: Assets/Scenes/Fase.unity
+    guid: 97587835ccbed6649a4c0bb43e741a56
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: 6dcce5aa23716ba418b906bbbea9b44d
+  - enabled: 1
+    path: Assets/Scenes/Vitoria Fase.unity
+    guid: 68c737f780bb39348b73916531ef3651
   m_configObjects: {}
