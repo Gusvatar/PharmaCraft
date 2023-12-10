@@ -39,7 +39,7 @@ public class balcaoPreferencia : MonoBehaviour
             label.SetActive(true);
             remedio = other.transform.gameObject.GetComponent<GrabDetecter>().GetHeldItem();
             
-            if(remedio.GetComponent<Recepy>()){
+            if(remedio && remedio.GetComponent<Recepy>()){
                 playerNearby = true;
             }
         }
