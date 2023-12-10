@@ -14,6 +14,14 @@ public class balcao : MonoBehaviour
     
     public GameObject label;
 
+    public AudioSource Audio;
+
+    public AudioClip RemedioErrado;
+
+    public AudioClip RemedioCorreto;
+
+    public AudioClip MusicaVitoria;
+
 
 
     private void Start()
@@ -65,9 +73,11 @@ public class balcao : MonoBehaviour
             int value = fila.top().GetComponent<Cliente>().validRecepy(remedio.GetComponent<Recepy>().recepy);
 
             if(value <= 10){
-                // Audio remedio errado
+                Audio.clip = RemedioErrado;
+                Audio.Play();
             }else{
-                // Audio remedio certo
+                Audio.clip = RemedioCorreto;
+                Audio.Play();
             }
 
 
@@ -77,7 +87,9 @@ public class balcao : MonoBehaviour
             Destroy(remedio);
             remedio = null;
             updateCurrency(value);
-            if(value >= 150){
+            if(value >= 10){
+                Audio.clip = MusicaVitoria;
+                Audio.Play();
                 SceneManager.LoadScene("Vitoria Tutorial");
             }
             

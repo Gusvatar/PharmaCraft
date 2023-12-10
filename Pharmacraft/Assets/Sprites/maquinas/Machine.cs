@@ -22,6 +22,12 @@ public class Machine : MonoBehaviour
     private Vector3 itemStartPosition = new Vector3(0,0,0);
     private float processTime = 8f;
 
+    public AudioSource Audio;
+
+    public AudioClip ProcessamentoMaquina;
+
+    public AudioClip ItemProcessado;
+
 
      void Start()
     {
@@ -70,8 +76,8 @@ public class Machine : MonoBehaviour
             {
                 if(ingrediente != null) 
                 {
-                    // Audio processando
-
+                    Audio.clip = ProcessamentoMaquina;
+                    Audio.Play();
 
                     isProcessionItem = true;
                     itemStartPosition = ingrediente.transform.position;
@@ -89,7 +95,8 @@ public class Machine : MonoBehaviour
         }
 
         if(ingrediente && processTime <= 0 && !ingrediente.GetComponent<Item>().processada){
-            // Audio final processando items
+            Audio.clip = ItemProcessado;
+            Audio.Play();
 
             Debug.Log("Remedio Feito");
             ingrediente.GetComponent<Item>().processada = true;
