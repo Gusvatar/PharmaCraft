@@ -82,7 +82,7 @@ public class balcaoPreferencia : MonoBehaviour
 
             Destroy(remedio);
             remedio = null;
-            updateCurrency(value);
+            updateCurrency(value*2);
         }
     }
 }
