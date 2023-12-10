@@ -23,6 +23,12 @@ public class MixerMachine : MonoBehaviour
     private Vector3 itemStartPosition = new Vector3(0,0,0);
     private float processTime = 8f;
 
+    public AudioSource Audio;
+
+    public AudioClip ProcessamentoMaquina;
+
+    public AudioClip TerminouMixagem;
+
 
 
     public void addToRecepy(GameObject item){
@@ -68,6 +74,8 @@ public class MixerMachine : MonoBehaviour
             {
                 if(ingrediente != null) 
                 {
+                    Audio.clip = ProcessamentoMaquina;
+                    Audio.Play();
                     isProcessionItem = true;
                     itemStartPosition = ingrediente.transform.position;
                     Debug.Log(itemStartPosition);
@@ -88,6 +96,8 @@ public class MixerMachine : MonoBehaviour
         }
 
         if(recepyIndex == 3 && processTime <= 0){
+            Audio.clip = TerminouMixagem;
+            Audio.Play();
             GameObject Remedio = Instantiate(remedyPrefab, remedyPrefab.transform.position, Quaternion.identity);
             Remedio.GetComponent<Recepy>().recepy = recepy;
 

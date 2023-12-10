@@ -13,6 +13,12 @@ public class balcaoPreferencia : MonoBehaviour
 
     public GameObject label;
 
+    public AudioSource Audio;
+
+    public AudioClip RemedioErrado;
+
+    public AudioClip RemedioCorreto;
+
 
     private void Start()
     {
@@ -62,9 +68,11 @@ public class balcaoPreferencia : MonoBehaviour
             int value = fila.priorityTop().GetComponent<Cliente>().validRecepy(remedio.GetComponent<Recepy>().recepy);
 
             if(value <= 10){
-                // Audio remedio errado
+                Audio.clip = RemedioErrado;
+                Audio.Play();
             }else{
-                // Audio remedio certo
+                Audio.clip = RemedioCorreto;
+                Audio.Play();
             }
 
             fila.priorityTop().GetComponent<Cliente>().sucesso = true;

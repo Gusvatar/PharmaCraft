@@ -583,6 +583,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ae85b0d55f50f94c8801b8a4a182eb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Audio: {fileID: 1852748941}
+  ClickBotao: {fileID: 8300000, guid: 32d4b1811dda14a6cb9e059ee8ad17d2, type: 3}
 --- !u!1 &957727325
 GameObject:
   m_ObjectHideFlags: 0
