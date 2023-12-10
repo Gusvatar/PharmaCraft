@@ -4448,7 +4448,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gerenciadorFilaClientes: {fileID: 1370442150}
   clientePrefab: {fileID: 5179017952853965971, guid: 544b94d47336ce7448d00ed26a4ade27, type: 3}
-  intervaloDeAdicao: 25
+  intervaloDeAdicao: 6
 --- !u!114 &1370442150
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4461,7 +4461,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cbd6de95c01cce47901709a2a107395, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prioritySprite: {fileID: -800106873, guid: 82040368b8f682e4ba0616acff366559, type: 3}
+  prioritySprite: {fileID: 1283589843, guid: 964a0f95b97bd4148b8ff9ee0b380ade, type: 3}
   clientSprites:
   - {fileID: 1781911396, guid: 390a55ed93d95984bae1ec8d330ca32e, type: 3}
   - {fileID: 1967908841, guid: c5c72006d32921e4c957dc659d29f83b, type: 3}
