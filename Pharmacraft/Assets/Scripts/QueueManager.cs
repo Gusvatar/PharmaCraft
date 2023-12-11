@@ -190,6 +190,7 @@ public class QueueManager : MonoBehaviour{
         
         if (filaDePrioridade.Count > 0)
         {
+            tempoParaSerAtendidoPrioridade = 50.0f;
             GameObject clienteRemovido = filaDePrioridade.Dequeue();
             clienteRemovido.GetComponent<Cliente>().closeRecepy();
             clienteRemovido.GetComponent<Cliente>().atendido = true;
